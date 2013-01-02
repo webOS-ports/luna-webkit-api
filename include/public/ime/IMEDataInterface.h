@@ -90,6 +90,14 @@ public:
      */
     IMEData_QRect		m_availableSpace;
 
+    /*! Factor to scale the original 132dpi layout by
+     */
+    IMEData_qreal		m_layoutScale;
+
+    /*! Factor to scale the UI pixmaps by
+     */
+    IMEData_qreal		m_pixmapScale;
+
     /*! Tells whether the keyboard should be shown or hidden. Set by host to be
      *  used by the input method.
      */
