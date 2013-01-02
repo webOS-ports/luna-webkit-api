@@ -146,6 +146,30 @@ Q_SIGNALS: void valueChanged(const qint32 & newValue);
 private:
 	qint32 m_value;
 };
+class IMEData_qreal: public QObject
+{
+Q_OBJECT
+public:
+	IMEData_qreal() :
+		m_value(0)
+	{
+	}
+	const qreal & get() const
+	{
+		return m_value;
+	}
+	void set(const qreal & value)
+	{
+		if (!(value == m_value))
+		{
+			m_value = value;
+			Q_EMIT valueChanged(value);
+		}
+	}
+Q_SIGNALS: void valueChanged(const qreal & newValue);
+private:
+	qreal m_value;
+};
 class IMEData_QString: public QObject
 {
 Q_OBJECT
